@@ -4,8 +4,17 @@ import { ILookupOptionsFunctionParameter } from "./i-lookup-options-function-par
 import { DiscardablePromise, discard } from "../common/discardable-promise";
 
 export enum BlurAction {
+	/**
+	 * Do nothing
+	 */
 	Nothing 			= 0,
+	/**
+	 * If filter matches no options, clear filter and value
+	 */
 	ClearOnNoMatch 		= 1 << 0,
+	/**
+	 * If there is one remaining option, set this option as the value
+	 */
 	SetOnMatch 			= 1 << 1
 }
 
